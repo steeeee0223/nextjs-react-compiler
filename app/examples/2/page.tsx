@@ -1,7 +1,5 @@
-import React from 'react';
 import { ExampleInfo } from '@/components/example-info';
-import { UserSquare } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { CardContainer, Grid } from './_components';
 
 const LONG_TEXT =
   'lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
@@ -21,7 +19,7 @@ export default function Page() {
           min-w-0
         </code>
       </p>
-      <CardContainer>
+      <CardContainer className="w-150">
         <div className="space-y-2 w-full">
           <div className="font-medium">Title</div>
           <div className="truncate">{LONG_TEXT}</div>
@@ -35,7 +33,7 @@ export default function Page() {
           min-w-0
         </code>
       </p>
-      <CardContainer>
+      <CardContainer className="w-150">
         <div className="min-w-0 space-y-2">
           <div className="font-medium">Title</div>
           <div className="truncate">{LONG_TEXT}</div>
@@ -43,7 +41,7 @@ export default function Page() {
       </CardContainer>
 
       <p className="text-amber-900 font-semibold">Snippet</p>
-      <CardContainer hideIcon className="bg-neutral-400">
+      <CardContainer hideIcon className="bg-neutral-400 w-150">
         <pre className="text-sm">
           {`<div className="flex gap-3 w-150">
   <div className="shrink-0">{Icon}</div>
@@ -55,26 +53,5 @@ export default function Page() {
         </pre>
       </CardContainer>
     </>
-  );
-}
-
-function CardContainer({
-  className,
-  hideIcon,
-  children,
-  ...props
-}: React.ComponentProps<'div'> & { hideIcon?: boolean }) {
-  return (
-    <div
-      className={cn('flex gap-3 rounded-lg p-4 bg-amber-500 w-150', className)}
-      {...props}
-    >
-      {!hideIcon && (
-        <div className="shrink-0">
-          <UserSquare className="size-6 text-amber-700" />
-        </div>
-      )}
-      {children}
-    </div>
   );
 }
