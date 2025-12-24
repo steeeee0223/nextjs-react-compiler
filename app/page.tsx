@@ -7,13 +7,22 @@ export default function Home() {
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           Some React examples
         </h1>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+        <div className="flex flex-col gap-4 text-base font-medium">
           <ExampleLink
             id="1"
             title="Example 1"
             description={
               <>
                 An example that you <strong>SHOULD</strong> use React Compiler.
+              </>
+            }
+          />
+          <ExampleLink
+            id="2"
+            title="Example 2"
+            description={
+              <>
+                Compare flex children with and without <strong>min-w-0</strong>.
               </>
             }
           />
